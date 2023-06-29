@@ -7,12 +7,13 @@ import { useNavigation } from '@react-navigation/native';
 import { auth } from '../../../firebaseConfig';
 import { getAuth,createUserWithEmailAndPassword } from 'firebase/auth';
 
-const SignInScreen = () => {
+const SignUpScreen = () => {
   const [username,setUsername]=useState('')
   const [password,setPassword]=useState('')
   const [email,setEmail]=useState('')
   const [repeatPassword,setRepeatPassword]=useState('')
   const {height}=useWindowDimensions();
+
   const navigation=useNavigation();
 
   const register=()=>{
@@ -23,7 +24,7 @@ const SignInScreen = () => {
       navigation.navigate('ConfirmEmail')
     })
     .catch(err=>{
-      console.log(err.message)
+      alert('Unable to create an account Please try agaiin later')
     })
     
   }
@@ -31,6 +32,7 @@ const SignInScreen = () => {
   const haveAnAccount=()=>{
     navigation.navigate('SignIn')
   }
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.root}>
@@ -47,7 +49,7 @@ const SignInScreen = () => {
 
     {/* include the social sign in buttons */}
 
-      <SocialSignInButtons />
+      {/* <SocialSignInButtons /> */}
 
       <CustomButton text='Have an account? Sign In' onPress={haveAnAccount} type='TERTIARY'/>
     </View>
@@ -81,4 +83,4 @@ const styles=StyleSheet.create({
   }
 })
 
-export default SignInScreen;
+export default SignUpScreen;

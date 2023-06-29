@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { View, Text ,Image,StyleSheet,useWindowDimensions,ScrollView} from 'react-native';
+import { View, Text ,Image,StyleSheet,useWindowDimensions,ScrollView, TextInput} from 'react-native';
 import Logo from '../../../assets/images/logo.png'
 import CustomeInput from '../../components/CustomInput/CustomeInput';
 import { CustomButton } from '../../components/CustomButtons/CustomButton';
@@ -18,14 +18,21 @@ const SignInScreen = () => {
 
   const onSignIn=()=>{
     // validate user
-    signInWithEmailAndPassword(auth,email,password)
+    
+    if(email.trim() && password.trim()){
+      signInWithEmailAndPassword(auth,email,password)
     .then(()=>{
       navigation.navigate('Home')
       console.log("User login successful")
     })
     .catch((err)=>{
-      console.log(err)
+      alert('Invalid Email or Password')
     });
+  }
+  else{
+    alert('Email and password both are required !!!')
+  }
+
   }
   const onForgotPassword=()=>{
     navigation.navigate('ForgotPassword')
@@ -37,12 +44,13 @@ const SignInScreen = () => {
     <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.root}>
       <Image source={Logo} style={[styles.logo,{height:height*0.3}]} resizeMode='contain'/>
-      <CustomeInput placeholder="username" value={email} setValue={setEmail}/>
+      <Text style={styles.title}>Login here</Text>
+      <CustomeInput placeholder="username" value={email} setValue={setEmail} />
       <CustomeInput placeholder='password' value={password} setValue={setPassword} secureTextEntry />
       <CustomButton text='Sign In' onPress={onSignIn} />
 
       <CustomButton text='Forgot password' onPress={onForgotPassword} type='TERTIARY'/>
-      <SocialSignInButtons />
+      {/* <SocialSignInButtons /> */}
       <CustomButton text='Do not have an account' onPress={dontHaveAccount} type='TERTIARY'/>
     </View>
     </ScrollView>
@@ -60,6 +68,12 @@ const styles=StyleSheet.create({
     maxWidth:300,
     height:100,
   },
+  title:{
+    fontSize:24,
+    fontWeight:'bold',
+    color:'#051c60',
+    margin:10,
+  }
 })
 
 export default SignInScreen;

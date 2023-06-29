@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import { View, Text ,Image,StyleSheet,useWindowDimensions,ScrollView} from 'react-native';
-import Logo from '../../../assets/images/logo.jpeg'
+import Logo from '../../../assets/images/logo.png'
 import CustomeInput from '../../components/CustomInput/CustomeInput';
 import { CustomButton } from '../../components/CustomButtons/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons';

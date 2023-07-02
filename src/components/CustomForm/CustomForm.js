@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, Pressable } from 'react-native'
+import { View, Text, StyleSheet, Image, Pressable, ScrollView } from 'react-native'
 import React, { useState } from 'react';
 import { CustomButton } from '../CustomButtons/CustomButton';
 import CustomeInput from '../CustomInput/CustomeInput';
@@ -10,8 +10,9 @@ import { collection, doc, addDoc } from 'firebase/firestore';
 import {app} from '../../../firebaseConfig'
 import { useNavigation } from '@react-navigation/native';
 
+// creating the databse instance
 const db=getFirestore(app)
-// const navigation=useNavigation();
+
 
 export default function CustomForm({ field }) {
   // states for the inputs
@@ -23,8 +24,10 @@ export default function CustomForm({ field }) {
   const [degree,setDegre]=useState('0.0')
   const [qulaification,setQualification]=useState()
 
+  // navigation for navigation
   const navigation=useNavigation();
-  // add data to database
+
+  // add data to database using async functions
   async function addData() {
     try {
       detailsRef = await addDoc(collection(db, "details"), {
@@ -44,6 +47,7 @@ export default function CustomForm({ field }) {
     }
   }
 
+  // handling submit 
   const handleSubmit=()=>{
     if(firstname && lastname && email && sslc && puc && degree && qulaification){
       addData();
@@ -56,6 +60,7 @@ export default function CustomForm({ field }) {
 
   return (
     <SafeAreaView>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <Image source={Logo} style={styles.logo} />
         <Text style={styles.headText}>Application for {field}</Text>
@@ -68,11 +73,15 @@ export default function CustomForm({ field }) {
         <CustomeInput placeholder='Highest Qualification' value={qulaification} setValue={setQualification} />
         <CustomButton  text='submit' onPress={handleSubmit} />
       </View>
+      </ScrollView>
     </SafeAreaView>
 )
 }
 
+// getting device width
 const divWidth = Dimensions.get('window').width
+
+// styles
 const styles = StyleSheet.create({
   container: {
     width: '92%',

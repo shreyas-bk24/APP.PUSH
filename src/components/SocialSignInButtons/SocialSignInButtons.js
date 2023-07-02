@@ -1,3 +1,5 @@
+// Import this on;y if you want to add social sign in buttons
+
 import { View, Text } from 'react-native'
 import React from 'react'
 import { CustomButton } from '../CustomButtons/CustomButton'

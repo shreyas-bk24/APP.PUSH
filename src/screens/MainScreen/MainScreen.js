@@ -15,11 +15,33 @@ const MainScreen = () => {
 
     const navigator=useNavigation()
 
-    // event callbacks
+    // event callbacks for every pressables
+    
     const handleCybersecurity=()=>{
-        navigator.navigate('QualificationAI')
+        navigator.navigate('Cyber')
     }
 
+    const handleIOT=()=>{
+        navigator.navigate('IOT')
+    }
+
+    const handleDS=()=>{
+        navigator.navigate('DS')
+    }
+
+    const handleDA=()=>{
+        navigator.navigate('DA')
+    }
+
+    const handleAppDev=()=>{
+        navigator.navigate('AppDev')
+    }
+    const handleWebdev=()=>{
+        navigator.navigate('Webdev')
+    }
+    const handleAI=()=>{
+        navigator.navigate('AI')
+    }
 
     return (
         <SafeAreaView>
@@ -31,28 +53,28 @@ const MainScreen = () => {
                     <Pressable onPress={handleCybersecurity}>
                         <CustomBlock name="CyberSecurity" image={hacker} />
                     </Pressable>
-                    <Pressable>
+                    <Pressable onPress={handleAI}>
                         <CustomBlock name="AI" image={ai} />
                     </Pressable>
                 </View>
                 <View style={styles.blockRows}>
-                    <Pressable>
+                    <Pressable onPress={handleIOT}>
                         <CustomBlock name="IOT" image={IOT} />
                     </Pressable>
-                    <Pressable>
+                    <Pressable onPress={handleDS}>
                         <CustomBlock name="DataScience" image={DS} />
                     </Pressable>
                 </View>
                 <View style={styles.blockRows} >
-                    <Pressable>
+                    <Pressable onPress={handleDA}>
                         <CustomBlock name="DataAnalytics" image={DA} />
                     </Pressable>
-                    <Pressable>
+                    <Pressable onPress={handleAppDev}>
                         <CustomBlock name="App Development" image={appDev} />
                     </Pressable>
                 </View>
-                <View style={styles.blockRows} >
-                    <Pressable>
+                <View style={styles.blockRows}>
+                    <Pressable onPress={handleWebdev}>
                         <CustomBlock name="Web Development" image={webDev} />
                     </Pressable>
                 </View>
@@ -60,6 +82,8 @@ const MainScreen = () => {
         </SafeAreaView>
     )
 }
+
+// styles
 
 const styles = StyleSheet.create({
     container: {

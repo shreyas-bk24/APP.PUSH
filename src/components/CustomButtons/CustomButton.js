@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text,StyleSheet,View ,Pressable} from 'react-native'
 
+// creating the custom Button 
 export const CustomButton = ({onPress,text,type= 'PRIMARY',bgcolor,fgcolor }) => {
   return (
     <Pressable 
@@ -19,9 +20,10 @@ export const CustomButton = ({onPress,text,type= 'PRIMARY',bgcolor,fgcolor }) =>
   )
 }
 
+// styles
 const styles=StyleSheet.create({
     container:{
-        width:'100%',
+        width:'96%',
         borderRadius:8,
         padding:15,
         marginVertical:5,

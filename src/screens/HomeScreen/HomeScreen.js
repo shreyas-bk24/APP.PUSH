@@ -2,11 +2,13 @@ import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import { CustomButton } from '../../components/CustomButtons/CustomButton'
 import { useNavigation } from '@react-navigation/native';
 
-// handlers 
 
 const HomeScreen = () => {
+
+  // navigation variable
   const navigator = useNavigation();
 
+  // event handlers 
   const handleSignIn = () => {
     navigator.navigate('SignIn')
   }
@@ -27,6 +29,8 @@ const HomeScreen = () => {
   )
 }
 
+// styles
+
 const styles = StyleSheet.create({
   container: {
     width: '100%',
@@ -41,6 +45,7 @@ const styles = StyleSheet.create({
   headText: {
     fontSize: 24,
     fontWeight: 600,
+    paddingBottom:15,
   }
 })
 export default HomeScreen;

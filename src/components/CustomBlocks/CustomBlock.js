@@ -1,7 +1,7 @@
 import { View, Text,StyleSheet,Image } from 'react-native'
 import React from 'react'
-import img from '../../../assets/images/logo.png';
 
+// creating the block which can be customized as per our needs
 const CustomBlock = ({image, name}) => {
     return (
         <View style={styles.blockContainer}>
@@ -10,7 +10,6 @@ const CustomBlock = ({image, name}) => {
         </View>
     )
 }
-
 
 // styles
 const styles=StyleSheet.create({

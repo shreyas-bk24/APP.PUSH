@@ -15,10 +15,6 @@ const NewPassword = () => {
         navigation.navigate('Home')
     }
 
-    const resendCode = () => {
-        console.warn("resend code")
-    }
-
     const BackToSignIn=()=>{
         navigation.navigate('SignIn')
     }

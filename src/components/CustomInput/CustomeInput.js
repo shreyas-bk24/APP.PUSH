@@ -1,6 +1,7 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 import React from 'react'
 
+// creating the custon input fields
 const CustomeInput = ({ value, setValue, placeholder ,secureTextEntry }) => {
     return (
         <View style={styles.container}>
@@ -15,6 +16,7 @@ const CustomeInput = ({ value, setValue, placeholder ,secureTextEntry }) => {
     )
 }
 
+// styles
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'White',

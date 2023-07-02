@@ -1,1 +1,1 @@
-export {default} from './Qualifications';
+export { AI, Cyber, IOT, AppDev, Webdev } from './Qualifications';

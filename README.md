@@ -1,4 +1,7 @@
-The folder ##ConfirmScreen inside the screen diretory is not used in the project
+#PushIT [the way to push yourself into IT secot]
+
+###Information about direcories
+The folder **ConfirmScreen** inside the screen diretory is not used in the project
 We use reset password by email link method
 Dont include Social sign in
 
@@ -14,6 +17,8 @@ https://firebase.google.com/docs/auth
 
 
 This application is built using 
-1.React-Native
+```
+1.React-Native expo
 2.Firebase authentication
 3.Firebase data-store
+```

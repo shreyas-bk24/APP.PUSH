@@ -9,8 +9,8 @@ import ForgotPassword from '../screens/ForgotPassword/ForgotPassword';
 import ConfirmEmailScreen from '../screens/ConfirmScreen/ConfirmEmailScreen';
 import MainScreen from '../screens/MainScreen/MainScreen';
 import NewPassword from '../screens/NewPasswordScreen/NewPassword';
+import Qualifications from '../screens/Forms/Qualifications';
 
-import CustomForm from '../components/CustomForm/CustomForm'
 
 const Stack = createNativeStackNavigator();
 
@@ -18,14 +18,15 @@ function NavigationFun() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{headerShown:false}}>
-                <Stack.Screen component={CustomForm} name='CustomForm' />
+                <Stack.Screen component={Qualifications} name='Qualifications' />
+                <Stack.Screen component={MainScreen} name='MainScreen' />
                 <Stack.Screen component={HomeScreen} name='Home' />
                 <Stack.Screen component={SignInScreen} name='SignIn' />
                 <Stack.Screen component={SignUpScreen} name='SignUp' />
                 <Stack.Screen component={ForgotPassword} name='ForgotPassword' />
-                <Stack.Screen component={ConfirmEmailScreen} name='ConfirmScreen' />
-                <Stack.Screen component={MainScreen} name='MainScreen' />
+                <Stack.Screen component={ConfirmEmailScreen} name='ConfirmScreen' />          
                 <Stack.Screen component={NewPassword} name='ResetPassword' />
+                
             </Stack.Navigator>
         </NavigationContainer>
     );

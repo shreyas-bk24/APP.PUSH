@@ -20,10 +20,8 @@ const HomeScreen = () => {
         <View style={styles.headderContainer}>
           <Text style={styles.headText}>Welcome to Exposys Data Labs</Text>
         </View>
-        <View>
           <CustomButton text='Sign In' type='PRIMARY' onPress={handleSignIn} />
           <CustomButton text='Sign Up' type='PRIMARY' onPress={handleSignUp} />
-        </View>
       </View>
     </SafeAreaView>
   )

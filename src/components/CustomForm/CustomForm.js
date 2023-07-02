@@ -3,10 +3,15 @@ import React, { useState } from 'react';
 import { CustomButton } from '../CustomButtons/CustomButton';
 import CustomeInput from '../CustomInput/CustomeInput';
 import { Dimensions } from 'react-native';
-
-import { collection, doc, setDoc } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Logo from '../../../assets/images/logo.png'
+import { collection, doc, addDoc } from 'firebase/firestore';
+import {app} from '../../../firebaseConfig'
+import { useNavigation } from '@react-navigation/native';
+
+const db=getFirestore(app)
+// const navigation=useNavigation();
 
 export default function CustomForm({ field }) {
   // states for the inputs
@@ -18,9 +23,30 @@ export default function CustomForm({ field }) {
   const [degree,setDegre]=useState('0.0')
   const [qulaification,setQualification]=useState()
 
+  const navigation=useNavigation();
+  // add data to database
+  async function addData() {
+    try {
+      detailsRef = await addDoc(collection(db, "details"), {
+        FirstName: firstname,
+        LastName: lastname,
+        email: email,
+        sslc: sslc,
+        puc: puc,
+        degree: degree,
+        highestQualification: qulaification,
+      })
+      console.log("data added successfully")
+      navigation.navigate('MainScreen')
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
 
   const handleSubmit=()=>{
     if(firstname && lastname && email && sslc && puc && degree && qulaification){
+      addData();
       alert(`Application submitted for ${field} internship successfully` )
     }
     else{

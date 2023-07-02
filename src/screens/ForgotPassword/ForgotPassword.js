@@ -42,7 +42,7 @@ const ForgotPassword = () => {
             <View style={styles.root}>
                 <Text style={styles.title}>Reset Password</Text>
                 <CustomeInput placeholder="Enter email" value={email} setValue={setEmail} />
-                <CustomButton text='Send' onPress={onSendPress} bgcolor="#ebbaa7" />
+                <CustomButton text='Send' onPress={onSendPress} bgcolor="#fc3d03" />
                 <CustomButton text='Back to Sign In' onPress={backToSignIn} type='TERTIARY' />
             </View>
         </ScrollView>

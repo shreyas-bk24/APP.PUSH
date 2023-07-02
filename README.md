@@ -1,4 +1,4 @@
-# PushIT (the way to push yourself into IT secot)
+# PushIT (the way to push yourself into IT sector)
 
 ## Information about direcories
 The folder **ConfirmScreen** inside the screen diretory is not used in the project

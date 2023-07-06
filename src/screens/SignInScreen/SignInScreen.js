@@ -5,9 +5,10 @@ import CustomeInput from '../../components/CustomInput/CustomeInput';
 import { CustomButton } from '../../components/CustomButtons/CustomButton';
 import { useNavigation } from '@react-navigation/native';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import {app} from '../../../firebaseConfig'
 
 // assigning Authentication function to a variable
-const auth = getAuth();
+const auth = getAuth(app);
 
 const SignInScreen = () => {
 

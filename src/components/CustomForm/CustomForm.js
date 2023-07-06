@@ -9,10 +9,11 @@ import Logo from '../../../assets/images/logo.png'
 import { collection, doc, addDoc } from 'firebase/firestore';
 import {app} from '../../../firebaseConfig'
 import { useNavigation } from '@react-navigation/native';
+import { getAuth } from 'firebase/auth';
 
 // creating the databse instance
 const db=getFirestore(app)
-
+const auth=getAuth(app)
 
 export default function CustomForm({ field }) {
   // states for the inputs
@@ -26,11 +27,13 @@ export default function CustomForm({ field }) {
 
   // navigation for navigation
   const navigation=useNavigation();
-
+  const user=auth.currentUser;
   // add data to database using async functions
+  if(user.emailVerified){
   async function addData() {
     try {
       detailsRef = await addDoc(collection(db, "details"), {
+        userID:user.uid,
         FirstName: firstname,
         LastName: lastname,
         email: email,
@@ -38,6 +41,7 @@ export default function CustomForm({ field }) {
         puc: puc,
         degree: degree,
         highestQualification: qulaification,
+        domain:field,
       })
       console.log("data added successfully")
       navigation.navigate('MainScreen')
@@ -46,7 +50,10 @@ export default function CustomForm({ field }) {
       console.log(error)
     }
   }
-
+}
+else{
+  alert("Please verify your email before processing")
+}
   // handling submit 
   const handleSubmit=()=>{
     if(firstname && lastname && email && sslc && puc && degree && qulaification){

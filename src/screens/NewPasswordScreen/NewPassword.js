@@ -12,6 +12,7 @@ const NewPassword = () => {
     const navigation=useNavigation();
 
     const submitReset = () => {
+        alert("Reset email has sent to your email please check it and reset your password!!")
         navigation.navigate('Home')
     }
 

@@ -58,6 +58,8 @@ This application is built using
 2.Firebase authentication
 3.Firebase data-store
 ```
-**_NOTE:_** This application built with only basic validations. Advance features and validations will be updated in the future.
+**_NOTE:_** 
+> This application built with only basic validations. Advance features and validations will be updated in the future.
 
-**_NOTE:_** If you want to add any features to this application feel free to add new things,feel free to contact me for any clearifications about the code base
+**_NOTE:_** 
+> If you want to add any features to this application feel free to add new things,feel free to contact me for any clearifications about the code base

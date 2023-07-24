@@ -17,8 +17,7 @@ https://firebase.google.com/docs/auth
 
 To run this app make sure node 18.16.0 or higher version is installed
 ```
-node --version
-
+$ node --version
 ```
  if not install node js in your local computer using this link
 https://nodejs.org/en/download/current
@@ -40,12 +39,12 @@ To use Expo, you need to have the following tools installed on your machine:
 Now install all the required dependencies
 
 ```
-npm install
+$ npm install
 ```
 
 to run the application run this command on the terminal
 ```
-npx expo start
+$ npx expo start
 ```
 
 Once you complerte these steps go to the playstore with your android phone and install the *Expo Cli* application 

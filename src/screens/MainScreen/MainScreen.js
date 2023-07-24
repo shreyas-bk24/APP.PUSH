@@ -47,7 +47,7 @@ const MainScreen = () => {
         <SafeAreaView>
             <ScrollView style={styles.blockHolder}>
                 <View style={styles.headderContainer}>
-                    <Text style={styles.title}>Exposys Data Labs Applications</Text>
+                    <Text style={styles.title}>Choose Your Domain of Intrest</Text>
                 </View>
                 <View style={styles.blockRows}>
                     <Pressable onPress={handleCybersecurity}>

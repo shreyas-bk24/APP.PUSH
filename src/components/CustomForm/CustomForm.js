@@ -43,7 +43,6 @@ export default function CustomForm({ field }) {
         highestQualification: qulaification,
         domain:field,
       })
-      console.log("data added successfully")
       navigation.navigate('MainScreen')
     }
     catch (error) {

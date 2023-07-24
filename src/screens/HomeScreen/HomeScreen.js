@@ -1,10 +1,11 @@
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
+import { View, Text, SafeAreaView, StyleSheet,Image,useWindowDimensions } from 'react-native'
 import { CustomButton } from '../../components/CustomButtons/CustomButton'
 import { useNavigation } from '@react-navigation/native';
-
+import Logo from '../../../assets/images/logo.png'
 
 const HomeScreen = () => {
 
+  const { height } = useWindowDimensions();
   // navigation variable
   const navigator = useNavigation();
 
@@ -20,7 +21,7 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container} >
       <View style={styles.headderContainer}>
         <View style={styles.headderContainer}>
-          <Text style={styles.headText}>Welcome to Exposys Data Labs</Text>
+          <Text style={styles.headText}>Welcome to APP.PUSH</Text>
         </View>
           <CustomButton text='Sign In' type='PRIMARY' onPress={handleSignIn} />
           <CustomButton text='Sign Up' type='PRIMARY' onPress={handleSignUp} />
@@ -38,6 +39,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignContent: 'center'
+  },
+  logo: {
+    width: '70%',
+    maxWidth: 400,
+    height: 100,
   },
   headderContainer: {
     alignItems: 'center',
